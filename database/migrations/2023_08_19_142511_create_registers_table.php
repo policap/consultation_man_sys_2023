@@ -18,7 +18,7 @@ class CreateRegistersTable extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->string('contact');
-            $table->string('age');
+            $table->string('dob');
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();

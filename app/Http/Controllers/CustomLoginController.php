@@ -20,11 +20,11 @@ class CustomLoginController extends Controller
         //return $request->all();
         if(Auth('doctors')->attempt(['email'=>$request->email, 'password'=>$request->password])){
             echo 'Doctor logged in successful';
-            return redirect()->route('seedoctor');
+            return redirect()->route('docdashboard');
 
         }elseif(Auth('nurses')->attempt(['email'=>$request->email, 'password'=>$request->password])){
             echo 'Nurse logged in successful';
-            return redirect()->route('seenurse');
+            return redirect()->route('nurdashboard');
 
         }
         elseif(Auth('patients')->attempt(['email'=>$request->email, 'password'=>$request->password])){
@@ -34,7 +34,7 @@ class CustomLoginController extends Controller
         }
         elseif(Auth('pharmacists')->attempt(['email'=>$request->email, 'password'=>$request->password])){
             echo 'pharmacist logged in successful';
-            return redirect()->route('seepharmacist');
+            return redirect()->route('phardashboard');
 
         }
         else{
@@ -50,7 +50,7 @@ class CustomLoginController extends Controller
         return view('auth.register');
     }
     public function registerstore(Request $request){
-        $request->validate(['fname'=>'required', 'lname'=>'required', 'contact'=>'required', 'email'=>'required|email', 'password_confirmation'=>'required|min:8', 'password'=>'required|same:password_confirmation']);
+        $request->validate(['fname'=>'required', 'lname'=>'required', 'contact'=>'required', 'dob'=>'required','email'=>'required|email', 'password_confirmation'=>'required|min:8', 'password'=>'required|same:password_confirmation']);
         $data=$request->all();
         $data['password']=Hash::make($request->password);
         $instance= new Register($data);
@@ -62,7 +62,7 @@ class CustomLoginController extends Controller
         return view('seenurse');
     }
     public function storeconsultnurse(Request $request){
-        $request->validate(['name'=>'required', 'age'=>'required', 'bp'=>'required', 'temp'=>'required', 'wt'=>'required', 'patientreport'=>'required']);
+        $request->validate(['bp'=>'required', 'wt'=>'required', 'temp'=>'required', 'patientreport'=>'required', 'nurseobservation'=>'required']);
         $data=$request->all();
         $instance= new NurseConsult($data);
         $instance->save();
@@ -94,7 +94,7 @@ class CustomLoginController extends Controller
         $instance= new PharmacistSale($data);
         $instance->save();
         echo 'Patient drug purchase successful';
-        return redirect()->route('login');
+        return redirect()->route('performlogout');
     }
     public function create(){
         return view('seenurse');

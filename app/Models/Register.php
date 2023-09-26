@@ -14,7 +14,7 @@ class Register extends User
         'fname',
         'lname',
         'contact',
-        'age',
+        'dob',
         'email',
         'password'
     ];

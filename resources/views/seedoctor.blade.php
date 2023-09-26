@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Doctor's observation</title>
+    <link  href="{{ asset('assets/css/bootstrap.min.css') }}"          rel="stylesheet">
 </head>
 <body>
     <div class="container"><br>
@@ -36,9 +37,9 @@
                                     <button type="submit" class="btn btn-danger mx-1">
                                         <a href="{{ route('admitpatient') }}" class="text-white">Admit Patient</a>
                                     </button>
-                                    <button type="submit" class="btn btn-primary">
+                                    {{-- <button type="submit" class="btn btn-primary">
                                         <a href="{{ route('performlogout') }}"class="text-white">Logout</a>
-                                    </button>
+                                    </button> --}}
     
                                 </div>
                             </div>

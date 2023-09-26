@@ -15,12 +15,11 @@ class CreateNurseconsultsTable extends Migration
     {
         Schema::create('nurseconsults', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('age');
             $table->string('bp');
-            $table->string('temp');
             $table->string('wt');
+            $table->string('temp');
             $table->string('patientreport');
+            $table->string('nurseobservation');
             $table->timestamps();
         });
     }

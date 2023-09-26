@@ -51,12 +51,12 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="age" class="col-md-4 col-form-label text-md-end">Age</label>
+                            <label for="dob" class="col-md-4 col-form-label text-md-end">Date of Birth</label>
 
                             <div class="col-md-6">
-                                <input id="age" type="text" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
+                                <input id="dob" type="date" class="form-control @error('dob') is-invalid @enderror" name="dob" value="{{ old('dob') }}" required autocomplete="dob" autofocus>
 
-                                @error('age')
+                                @error('dob')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

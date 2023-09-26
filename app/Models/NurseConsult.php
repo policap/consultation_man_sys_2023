@@ -9,12 +9,12 @@ class NurseConsult extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'name',
-        'age',
         'bp',
-        'temp',
         'wt',
-        'patientreport'
+        'temp',
+        'patientreport',
+        'nurseobservation'
+        
     ];
     protected $table='nurseconsults';
 }
